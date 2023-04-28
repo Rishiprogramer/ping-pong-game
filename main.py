@@ -1,5 +1,5 @@
-
 import turtle
+import time
 import winsound
 
 wn = turtle.Screen()
@@ -75,8 +75,20 @@ def paddle_b_down():
     y -= 20
     paddle_b.sety(y)
 
-def win():
- pass
+def win(score_b, score_a, pen):
+    if score_b == 10:
+        #wn.reset()
+        pen.clear()
+        pen.write("Player B wins", align="center", font=("Courier", 24, "normal"))
+        time.sleep(22)
+        exit()
+
+    if score_a == 10:
+        #wn.reset()
+        pen.clear()
+        pen.write("Player A wins", align="center", font=("Courier", 24, "normal"))
+        time.sleep(22)
+        exit()
 
 # Keyboard bindings
 wn.listen()
@@ -130,24 +142,7 @@ while True:
         winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
 
 
-    if score_b == 10:
-        wn.reset()
-        pen.clear()
-        pen.write("Player B wins", align="center", font=("Courier", 24, "normal"))
-
-    if score_a == 10:
-        wn.reset()
-        pen.clear()
-        pen.write("Player A wins", align="center", font=("Courier", 24, "normal"))
-
-
-
-
-
-
-
-
-
+    win(score_b,score_a,pen)
 
 
 
