@@ -142,11 +142,30 @@ while True:
         winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
 
 
+    #checking paddle b boder
+    if paddle_b.ycor() == -260:
+        y = paddle_b.ycor()
+        y += 20
+        paddle_b.sety(y)
+
+    elif paddle_b.ycor() == 280:
+        y = paddle_b.ycor()
+        y -= 20
+        paddle_b.sety(y)
+    # checking paddle a boder
+
+    if paddle_a.ycor() == -260:
+        y = paddle_a.ycor()
+        y += 20
+        paddle_a.sety(y)
+
+    elif paddle_a.ycor() == 280:
+        y = paddle_a.ycor()
+        y -= 20
+        paddle_a.sety(y)
+
+
     win(score_b,score_a,pen)
-
-
-
-
 
 
 
